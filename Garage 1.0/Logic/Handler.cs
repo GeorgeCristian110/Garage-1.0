@@ -31,7 +31,7 @@ namespace Garage_1._0.Logic
             bool added = _garage.AddVehicle(vehicle); // tries to add the vehicle into the garage
 
             if (added) // Show the result based if there was free space or not
-                return "The vehicle was parked.";
+                return "The vehicle was parked!";
             else
                 return "Garage is full!";
         }
