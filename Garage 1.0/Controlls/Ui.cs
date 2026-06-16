@@ -77,22 +77,6 @@ namespace Garage_1._0.Controlls
             }
         }
 
-        private (string reg, string color, int wheels, string brand) CommonPorperites()
-        {
-            Console.Write("Registration number: ");
-            string reg = Console.ReadLine() ?? "";
-
-            Console.Write("Color: ");
-            string color = Console.ReadLine() ?? "";
-
-            Console.Write("Number of wheels: ");
-            int.TryParse(Console.ReadLine(), out int wheels);
-
-            Console.Write("Brand: ");
-            string brand = Console.ReadLine() ?? "";
-
-            return (reg, color, wheels, brand);
-        }
 
         private void AddVehicle()
         {
@@ -112,8 +96,18 @@ namespace Garage_1._0.Controlls
                 Console.WriteLine("Invalid option try again");
                 return;
             }
-            
-            var (reg, color, wheels, brand) = CommonPorperites();
+
+            Console.Write("Registration number: ");
+            string reg = Console.ReadLine() ?? "";
+
+            Console.Write("Color: ");
+            string color = Console.ReadLine() ?? "";
+
+            Console.Write("Number of wheels: ");
+            int.TryParse(Console.ReadLine(), out int wheels);
+
+            Console.Write("Brand: ");
+            string brand = Console.ReadLine() ?? "";
 
             Vehicle? vehicle = null;
 
