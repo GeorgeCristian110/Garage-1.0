@@ -23,7 +23,7 @@ namespace Garage_1._0.Controlls
             while (isActive)
             {
                 Console.WriteLine("Choose the option you want to proceed with: ");
-                Console.WriteLine("1. Add vehicle ");
+                Console.WriteLine("1. Park a vehicle ");
                 Console.WriteLine("2. Remove vehicle ");
                 Console.WriteLine("3. Show all parked vehicles ");
                 Console.WriteLine("4. Find vehicle by registration number ");
@@ -37,7 +37,7 @@ namespace Garage_1._0.Controlls
                 {
                     case "1":
                         Console.Clear();
-                        AddVehicle();
+                        ParkVehicle();
                         break;
 
                     case "2":
@@ -78,7 +78,7 @@ namespace Garage_1._0.Controlls
         }
 
 
-        private void AddVehicle()
+        private void ParkVehicle()
         {
             Console.WriteLine("Sekect vehicle type:");
             Console.WriteLine("1. Car");

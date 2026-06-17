@@ -14,7 +14,7 @@ namespace Garage_1._0.Logic
         private readonly T[] _vehicles; // Fixed size array of type T.
         private int _count = 0; // Keep track of the number of vehicles in the garage.
 
-        public Garage(int capacity)//We set the size of the garage when we create the object.
+        public Garage(int capacity)//We set the size of the garage when we create it.
         {
             _vehicles = new T[capacity];
         }

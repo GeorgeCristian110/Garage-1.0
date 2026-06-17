@@ -27,13 +27,16 @@ namespace Garage_1._0.Logic
             {
                 return "A vehicle with that registration number is already registred.";
             }
+
+            if (vehicle.NumberOfWheels < 0)
+                return "The numbers of wheels can not be nagative!";
             
             bool added = _garage.AddVehicle(vehicle); // tries to add the vehicle into the garage
 
             if (added) // Show the result based if there was free space or not
                 return "The vehicle was parked!";
             else
-                return "Garage is full!";
+                return "Garage is full. No more spaces to park in!";
         }
 
 

@@ -27,6 +27,7 @@ namespace Garage_1._0.Controlls
 
             Handler handler = new Handler (size);
 
+            Console.WriteLine($"A garage of size {size} was created!");
 
             Console.Write("Populate the garage with default vehicles? (y/n): ");
             string populateChoice = Console.ReadLine() ?? "";
