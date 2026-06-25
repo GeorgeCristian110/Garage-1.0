@@ -1,4 +1,6 @@
 ﻿using Garage_1._0.Controlls;
+using Garage_1._0.Interfaces;
+using Garage_1._0.Logic;
 
 namespace Garage_1._0
 {
@@ -6,7 +8,12 @@ namespace Garage_1._0
     {
         static void Main(string[] args)
         {
-            new Manager().Run();
+            var ui = new ConsoleUI();
+            var startup =  new StartUp(ui);
+
+            IHandler handler = startup.Init();
+            var manager = new Manager(handler, ui);
+            manager.ShowMainMenu();
 
         }
     }

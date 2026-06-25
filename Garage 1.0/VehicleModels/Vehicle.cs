@@ -5,19 +5,19 @@ using System.Text;
 
 namespace Garage_1._0.VehicleModels
 {
-    public class Vehicle : IVehicle
+    public abstract class Vehicle : IVehicle
     {
-        public string RegistrationNumber { get; protected set; } = string.Empty;
+        public string RegistrationNumber { get; protected set; } 
 
-        public string Color { get; protected set; } = string.Empty;
+        public string Color { get;  } 
+        public int NumberOfWheels { get;  }
 
-        public int NumberOfWheels { get; protected set; }
-
-        public string Brand { get; protected set; } = string.Empty;
+        public string Brand { get;  } 
 
 
         public Vehicle(string registrationNumber, string color, int numberOfWheels, string brand)
         {
+            //Validate
             RegistrationNumber = registrationNumber;
             Color = color;
             NumberOfWheels = numberOfWheels;

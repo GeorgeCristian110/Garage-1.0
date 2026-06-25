@@ -9,11 +9,13 @@ namespace Garage_1._0.Logic
 {
     public class Handler : IHandler
     {
-        private Garage<Vehicle> _garage;
+        private IGarage<Vehicle> _garage;
 
-        public Handler(int capacity)
+        public bool IsGarageFull => _garage.IsFull;
+
+        public Handler(IGarage<Vehicle> vehicles)
         {
-            _garage = new Garage<Vehicle>(capacity);
+            _garage = vehicles;
         }
 
         public string AddVehicle(Vehicle vehicle)
@@ -23,7 +25,7 @@ namespace Garage_1._0.Logic
                 return "Registration number can not be empty.";
             }
 
-            if (_garage.FindByRegistration(vehicle.RegistrationNumber) != null) //make sure there can't be vehicle with the same registration number.
+            if ((_garage.FirstOrDefault(v => v.RegistrationNumber == v.RegistrationNumber) != null)) //make sure there can't be vehicle with the same registration number.
             {
                 return "A vehicle with that registration number is already registred.";
             }
@@ -47,12 +49,12 @@ namespace Garage_1._0.Logic
 
         public Vehicle? FindByRegistration(string registrationNumber)
         {
-            return _garage.FindByRegistration(registrationNumber);
+            return _garage.FirstOrDefault(v => v.RegistrationNumber == registrationNumber);
         }
 
-        public IEnumerable<Vehicle> GetAllVehicles()
+        public IEnumerable<string> GetAllVehicles()
         {
-            return _garage; // Return all vehicles in the garage
+            return _garage.Select(v => v.ToString()); // Return all vehicles in the garage
         }
 
         public void PopulateGarage()

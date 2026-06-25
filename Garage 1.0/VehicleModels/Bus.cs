@@ -7,12 +7,13 @@ namespace Garage_1._0.Vehicles
 {
     public class Bus : Vehicle
     {
-        public int NumberOfSeats { get; protected set; }
+        public int NumberOfSeats { get;  }
 
         public Bus(string registrationNumber, string color, int numberOfWheels,
             string brand, int numberOfSeats)
             : base(registrationNumber, color, numberOfWheels, brand)
         {
+            //Validate
             NumberOfSeats = numberOfSeats;
         }
 

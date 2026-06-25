@@ -118,6 +118,23 @@ namespace Garage_1._0_Tests
         }
 
         [Test]
+        public void Testing()
+        {
+            //Arrange
+            var garage = new Garage<Vehicle>(2);
+            Vehicle car = new Car("LOL120", "Green", 4, "Saab", "Diesel");
+            Vehicle car2 = new Car("LOL120", "Green", 4, "Saab", "Diesel");
+
+            garage.AddVehicle(car);
+
+            //Act
+            var result = garage.AddVehicle(car2);
+
+            //Assert
+            Assert.False(result);
+        }
+
+        [Test]
 
         public void GetEnumerator_WhenAddedVehicles_ReturnAll()
         {
